@@ -2,53 +2,43 @@ import Link from "next/link"
 import { Separator } from "../ui/separator"
 import Image from "next/image"
 import homeGearShoes from "@/public/img/gear/home-gear-shoes.webp"
-import homeGearCook from "@/public/img/gear/home-gear-cook.webp"
-import homeGearBag from "@/public/img/gear/home-gear-bag.webp"
-import homeGearTools from "@/public/img/gear/home-gear-tools.webp"
+import homeBrandEiger from "@/public/img/home-brand-eiger.png"
 
 const gearItems = [
   {
-    img: homeGearShoes,
+    img: homeBrandEiger,
     label: "SHOES",
     url: "#",
   },
   {
-    img: homeGearBag,
+    img: homeBrandEiger,
     label: "BAG",
     url: "#",
   },
 
   {
-    img: homeGearCook,
-    label: "COOK",
-    url: "#",
-  },
-  {
-    img: homeGearTools,
-    label: "TOOLS",
+    img: homeBrandEiger,
+    label: "NESTING",
     url: "#",
   },
 ]
 
-export default function HomeGear() {
+export default function HomeBrand() {
   return (
     <section className="w-full">
-      <h1 className="font-outfit text-3xl font-semibold md:text-4xl">Gear</h1>
+      <h1 className="font-outfit text-3xl font-semibold md:text-4xl">Brand</h1>
       <Separator className="mt-2 mb-6" />
       <div className="grid w-full grid-cols-2 gap-5 sm:grid-cols-4">
         {gearItems.map((i, index) => (
           <Link href={i.url} key={index} className="">
-            <div className="flex flex-col items-center rounded-2xl bg-taupe-700 p-1">
+            <div className="flex flex-col items-center justify-center">
               <Image
                 src={i.img}
                 width={0}
                 height={0}
                 alt=""
-                className="h-24 rounded-2xl object-cover md:h-36"
+                className="w-40 rounded-2xl"
               />
-              <div className="py-1">
-                <span className="text-xl font-bold text-white">{i.label}</span>
-              </div>
             </div>
           </Link>
         ))}
